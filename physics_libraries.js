@@ -1,4 +1,5 @@
 function setup() {
+  amongus.sus = true
 
 }
 
