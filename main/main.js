@@ -1,6 +1,9 @@
 function setup() {
-  amongus.sus = true
-
+  amongus.sus = true;
+  var Engine=Matter.Engine,
+      Render=Matter.Render,
+      World=Matter.World,
+      Bodies=Matter.Bodies;
 }
 //hello2
 
