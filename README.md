@@ -20,10 +20,7 @@
 - Ev
 
 ### 3D: rullende bold gennem labyrint
-*Eksempelvis:*
 <img src="https://i.pinimg.com/originals/e8/1b/b3/e81bb35efd3371f1626e28c566f859dc.jpg" style="width: 200px">
-- To knapper per hånd styrer den - man ser oppefra
-- Bolden ruller - friktion og sammenstød med vægge, jord osv.
 
 
 ## Planer for program
