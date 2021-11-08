@@ -4,10 +4,6 @@
 <script language="javascript" type="text/javascript" src="_FILNAVN></script>
 ~~~~
 
-## Planer for programmer
-1. Anime boobies
-2. Success
-
 ## Ideer
 ### Rullende bold
 - Bold falder ned af bakke 
@@ -19,3 +15,6 @@
 
 
 ### Anden ide
+
+
+## Planer for program
