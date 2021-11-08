@@ -9,3 +9,6 @@
 - Gælder om hastighed 
 - Powerups:
    - slow motion
+- Cloths til æstetik eller evt. bremsning - målflag (ish)
+- 
+### Anden ide
