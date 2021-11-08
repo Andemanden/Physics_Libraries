@@ -1,8 +1,13 @@
 # Physics_Libraries Project
-## Planer for programmet
+## Planer for programmer
 1. Anime boobies
 2. Success
 
-
-Why?
-: gaming
+## Ideer
+### Rullende bold
+- Bold falder ned af bakke 
+- Gælder om hastighed 
+- Powerups:
+   - slow motion
+når
+* yep
