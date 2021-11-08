@@ -9,6 +9,6 @@
 - Gælder om hastighed 
 - Powerups:
    - slow motion
-- Cloths til æstetik eller evt. bremsning - målflag (ish)
-- 
+- Cloths/springs til æstetik eller evt. bremsning - målflag (ish)
+- Broer: springs
 ### Anden ide
