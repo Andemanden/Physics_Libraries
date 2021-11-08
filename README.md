@@ -9,5 +9,3 @@
 - Gælder om hastighed 
 - Powerups:
    - slow motion
-når
-* yep
