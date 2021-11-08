@@ -1,4 +1,2 @@
-# Physics_Libraries
-mogi
-
-## sus
+# Physics_Libraries Project
+## Planer for programmet
