@@ -11,10 +11,16 @@
 - Powerups:
    - slow motion
 - Cloths/springs til æstetik eller evt. bremsning - målflag (ish)
-- Broer: springs
+- Broer: springs 
 
 
-### Anden ide
+### Hockey spil
+- Kamera ser oppefra
+- Lav friktions hockey puck
+- Ev
+
+### 3D: rullende bold gennem labyrint
+![](https://i.pinimg.com/originals/e8/1b/b3/e81bb35efd3371f1626e28c566f859dc.jpg)
 
 
 ## Planer for program
