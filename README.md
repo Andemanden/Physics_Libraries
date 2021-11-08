@@ -20,7 +20,7 @@
 - Ev
 
 ### 3D: rullende bold gennem labyrint
-![](https://i.pinimg.com/originals/e8/1b/b3/e81bb35efd3371f1626e28c566f859dc.jpg)
+<img src="https://i.pinimg.com/originals/e8/1b/b3/e81bb35efd3371f1626e28c566f859dc.jpg" style="width: 200px">
 
 
 ## Planer for program
