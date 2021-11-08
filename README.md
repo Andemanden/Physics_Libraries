@@ -17,7 +17,8 @@
 ### Hockey spil
 - Kamera ser oppefra
 - Lav friktions hockey puck
-- Ev
+- Powerups/forskellige gamemodes
+- Evt. online? (ambitiøst!), men kunne fungere (Websockets til central server på lokalt netværk)
 
 ### 3D: rullende bold gennem labyrint
 *Eksempelvis:*
