@@ -28,6 +28,6 @@
 <img src="https://i.pinimg.com/originals/e8/1b/b3/e81bb35efd3371f1626e28c566f859dc.jpg" style="width: 300px">
 - To knapper per hånd styrer den - man ser oppefra
 - Bolden ruller - friktion og sammenstød med vægge, jord osv.
-- Glæder om at ramme hullet hurtigst
+- Gælder om at ramme hullet hurtigst
 
 ## Planer for program
