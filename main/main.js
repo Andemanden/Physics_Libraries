@@ -1,54 +1,27 @@
-// module aliases
 var Engine = Matter.Engine,
-    Render = Matter.Render,
-    Runner = Matter.Runner,
-    Bodies = Matter.Bodies,
-    Composite = Matter.Composite;
+    // Render = Matter.Render, // ignored since p5.js is used as editor.
+    World  = Matter.World, 
+    Bodies = Matter.Bodies;
 
-// create an engine
-var engine = Engine.create();
+var engine, world, bodies;
 
-// create a renderer
-var render = Render.create({
-    element: document.body,
-    engine: engine
-});
+var box;
 
-// create two boxes and a ground
-var boxA = Bodies.rectangle(400, 200, 80, 80);
-var boxB = Bodies.rectangle(450, 50, 80, 80);
-var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
-
-// add all of the bodies to the world
-Composite.add(engine.world, [boxA, boxB, ground]);
-
-// run the renderer
-Render.run(render);
-
-// create runner
-var runner = Runner.create();
-
-// run the engine
-Runner.run(runner, engine);
-
-
-// var render = Render.create({
-//     element: document.body,
-//     engine: engine
-// });
-
-// var
-
-// function setup() {
-//   amongus.sus = true;
-  
-      
-   
-// }
-// //test1
-
-// function draw() {
+function setup() {
+    createCanvas(400, 400);
+    engine = Engine.create();
+    world  = engine.world;
+    box = Bodies.rectangle(100, 100, 100, 100);
+    
+    Engine.run(engine);
+    World.add(world, box);
+}
 
 
 
-// }
+
+function draw() {
+    background(250);
+
+    rect(box.position.x, box.position.y, 100, 100 );
+}
