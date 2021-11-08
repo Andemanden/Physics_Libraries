@@ -10,5 +10,6 @@ function setup() {
 //test1
 
 function draw() {
-//hello 3
+
+    console.log("nårnå nrån årn nr ånrå ")
 }
