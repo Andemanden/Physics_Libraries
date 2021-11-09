@@ -5,23 +5,103 @@ var Engine = Matter.Engine,
 
 var engine, world, bodies;
 
-var box;
+class Box {
+    constructor(_x, _y, _w, _h, matteroptions = {}) {
+        console.log(`Added box: at ${_x}, ${_y}`);
+        this.x = _x; this.y = _y; this.w = _w; this.h = _h;
+        this.body = Bodies.rectangle(this.x, this.y, this.w, this.h, matteroptions);
+        World.add(world, this.body);
+    }
+
+    show() {
+        var pos = this.body.position;
+        var angle = this.body.angle;
+        // console.log(pos, angle);
+
+        push();
+        translate(pos.x, pos.y);
+        rotate(angle);
+        fill(255);
+        rectMode(CENTER);
+        rect(0, 0, this.w, this.h); 
+        fill(0);
+        circle(0,0, 2);
+
+        pop();
+    }
+}
+
+// class Circle {
+//     constructor(_x, _y, _radius) {
+//         this.x = _x; this.y = _y; this.r = _radius;
+//         this.body = Bodies.circle(this.x, this.y, this.radius);
+//         World.add(world, this.body);
+//     }
+
+//     show() {
+//         var pos = this.body.position;
+//         var angle = this.body.angle;
+
+//         push() 
+//         translate(pos.x, pos.y);
+//         rotate(angle);
+//         fill(255);
+//         circle(0, 0, this.r);
+//         stroke(0);
+//         line(-this.r, 0, this.y, 0);
+//         pop();
+//     }
+// }
+
+// class Triangle {
+    // constructor(x1, y1, x2, y2, x3, y3, _isStatic) {
+        // this.body = Bodies.fromVertices(x1, y1, [{x1, y1}, {x2, y2}, {x3, y3}], {isStatic: _isStatic});
+        // World.add(world, this.body);
+    // }
+// 
+    // show() {
+        // var pos = this.body.position;
+// 
+        // console.table(this.body.vertices[0]);
+// 
+        // push();
+        // translate(pos.x, pos.y);
+        // 
+        // stroke(255);    
+        // line(0, 0, this.body.vertices[0].position.x, this.body.vertices[0].y);
+        // line(0, 0, this.body.vertices[1].position.x, this.body.vertices[1].y);
+// 
+        // pop();
+    // }
+// }
+
+var floor;
+var boxes = [];
+// var balls = [];
 
 function setup() {
     createCanvas(400, 400);
     engine = Engine.create();
     world  = engine.world;
-    box = Bodies.rectangle(100, 100, 100, 100);
-    
+
+
+    floor = new Box(width/2, height - 5, width, 10, {isStatic: true, angle: 1/16});
+    // triangle = new Triangle(100, 100, 150, 150, 200, 200, true);
+
     Engine.run(engine);
-    World.add(world, box);
+    // noLoop();   
 }
 
 
-
+function mousePressed() {
+    boxes.push(new Box(mouseX, mouseY, 20, 20));
+    // balls.push(new Circle(mouseX + 20, mouseY, 10, 10));
+}
 
 function draw() {
-    background(250);
+    background(0);
 
-    rect(box.position.x, box.position.y, 100, 100 );
+    floor.show();
+    for (box of boxes)
+        box.show();
 }
