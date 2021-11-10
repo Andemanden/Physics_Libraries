@@ -5,6 +5,7 @@ var Engine = Matter.Engine,
 
 var engine, world, bodies;
 
+
 class Box {
     constructor(_x, _y, _w, _h, matteroptions = {}) {
         console.log(`Added box: at ${_x}, ${_y}`);
@@ -31,27 +32,27 @@ class Box {
     }
 }
 
-// class Circle {
-//     constructor(_x, _y, _radius) {
-//         this.x = _x; this.y = _y; this.r = _radius;
-//         this.body = Bodies.circle(this.x, this.y, this.radius);
-//         World.add(world, this.body);
-//     }
+class Circle {
+    constructor(_x, _y, _radius) {
+        this.x = _x; this.y = _y; this.r = _radius;
+        this.body = Bodies.circle(this.x, this.y, this.r);
+        World.add(world, this.body);
+    }
 
-//     show() {
-//         var pos = this.body.position;
-//         var angle = this.body.angle;
+    show() {
+        var pos = this.body.position;
+        var angle = this.body.angle;
 
-//         push() 
-//         translate(pos.x, pos.y);
-//         rotate(angle);
-//         fill(255);
-//         circle(0, 0, this.r);
-//         stroke(0);
-//         line(-this.r, 0, this.y, 0);
-//         pop();
-//     }
-// }
+        push() 
+        translate(pos.x, pos.y);
+        rotate(angle);
+        fill(255);
+        ellipse(0, 0, this.r*2, this.r*2);
+        stroke(0);
+        line(-this.r, 0, this.r, 0);
+        pop();
+    }
+}
 
 // class Triangle {
     // constructor(x1, y1, x2, y2, x3, y3, _isStatic) {
@@ -77,7 +78,7 @@ class Box {
 
 var floor;
 var boxes = [];
-// var balls = [];
+var balls = [];
 
 function setup() {
     createCanvas(400, 400);
@@ -85,7 +86,7 @@ function setup() {
     world  = engine.world;
 
 
-    floor = new Box(width/2, height - 5, width, 10, {isStatic: true, angle: 1/16});
+    floor = new Box(width/2, height/2, width, 10, {isStatic: true, angle: 0.8, friction: 0});
     // triangle = new Triangle(100, 100, 150, 150, 200, 200, true);
 
     Engine.run(engine);
@@ -94,8 +95,17 @@ function setup() {
 
 
 function mousePressed() {
-    boxes.push(new Box(mouseX, mouseY, 20, 20));
-    // balls.push(new Circle(mouseX + 20, mouseY, 10, 10));
+    // var newBox = new Box(mouseX, mouseY, 20, 20);
+    // boxes.push(newBox);
+
+    var newCirc = new Circle(mouseX, mouseY, 20);
+    balls.push(newCirc);
+}
+
+function keyPressed() {
+    var addedVect = Matter.Vector.create(0, -0.05);
+    for (ball of balls)
+        Matter.Body.applyForce(ball.body, ball.body.position, addedVect);
 }
 
 function draw() {
@@ -104,4 +114,6 @@ function draw() {
     floor.show();
     for (box of boxes)
         box.show();
+    for (ball of balls)
+        ball.show();
 }
