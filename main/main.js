@@ -5,29 +5,37 @@ var Engine = Matter.Engine,
 
 var engine, world, bodies;
 
-
+var startTime;
 
 var floor;
 var boxes = [];
 var balls = [];
 
+var camera;
+
+var sliderx, slidery, sliderprop;
+
 function setup() {
-    createCanvas(400, 400);
+    startTime = millis();
+    createCanvas(800, 400);
+    camera = new Camera(width/2, height/2, width, height);
+
     engine = Engine.create();
     world  = engine.world;
-
-
-    floor = new Box(width/2, height/2, width, 10, {isStatic: true, angle: 0.8, friction: 0});
-    // triangle = new Triangle(100, 100, 150, 150, 200, 200, true);
-
+    
+    floor = new Box(width/2, height/2, width, 10, {isStatic: true, angle: 0.4, friction: 0});
+    
     Engine.run(engine);
-    // noLoop();   
 }
 
 function draw() {
     background(0);
 
     floor.show();
+
+    if (balls[0] != null)
+        camera.setpos(balls[0].body.position.x, balls[0].body.position.y);
+
     for (box of boxes)
         box.show();
     for (ball of balls)

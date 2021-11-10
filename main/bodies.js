@@ -11,12 +11,18 @@ class Box {
        var angle = this.body.angle;
        // console.log(pos, angle);
 
+       var camtopx = camera.x - camera.w/2;
+       var camtopy = camera.y - camera.h/2;
+
+       var posfromcamx = pos.x - camtopx;
+       var posfromcamy = pos.y - camtopy;
+
        push();
-       translate(pos.x, pos.y);
+       translate(posfromcamx * camera.proportion, posfromcamy * camera.proportion);
        rotate(angle);
        fill(255);
        rectMode(CENTER);
-       rect(0, 0, this.w, this.h); 
+       rect(0, 0, this.w * camera.proportion, this.h * camera.proportion); 
        fill(0);
        circle(0,0, 2);
 
@@ -35,11 +41,17 @@ class Circle {
        var pos = this.body.position;
        var angle = this.body.angle;
 
+       var camtopx = camera.x - camera.w/2;
+       var camtopy = camera.y - camera.h/2;
+
+       var posfromcamx = pos.x - camtopx;
+       var posfromcamy = pos.y - camtopy;
+
        push() 
-       translate(pos.x, pos.y);
+       translate(posfromcamx * camera.proportion, posfromcamy * camera.proportion);
        rotate(angle);
        fill(255);
-       ellipse(0, 0, this.r*2, this.r*2);
+       ellipse(0, 0, this.r*2*camera.proportion, this.r*2*camera.proportion);
        stroke(0);
        line(-this.r, 0, this.r, 0);
        pop();

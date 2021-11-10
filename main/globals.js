@@ -4,12 +4,12 @@ function mousePressed() {
    // var newBox = new Box(mouseX, mouseY, 20, 20);
    // boxes.push(newBox);
 
-   var newCirc = new Circle(mouseX, mouseY, 20);
+   var newCirc = new Circle(mouseX, mouseY, 10);
    balls.push(newCirc);
 }
 
 function keyPressed() {
-   var addedVect = Matter.Vector.create(0, -0.05);
+   var addedVect = Matter.Vector.create(0, -0.005);
    for (ball of balls)
        Matter.Body.applyForce(ball.body, ball.body.position, addedVect);
 }
