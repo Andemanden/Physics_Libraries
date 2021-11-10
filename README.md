@@ -5,8 +5,6 @@
 ~~~~
 
 ## Ideer
-### AMONOS 3.0!!!!!
-- ja
 ### Rullende bold
 - Bold falder ned af bakke 
 - Gælder om hastighed 
