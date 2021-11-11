@@ -1,8 +1,5 @@
 class Physical {
-    constructor(_x, _y) {
-        this.x = _x; this.y = _y;
-    }
-
+    constructor() {}
     getcampos(cam) {
         var camtopx = cam.x - cam.w / 2;
         var camtopy = cam.y - cam.h / 2;
@@ -22,10 +19,9 @@ class Physical {
 class Box extends Physical {
     constructor(_x, _y, _w, _h, matteroptions = {}) {
         console.log(`Added box: at ${_x}, ${_y}`);
-        super(_x, _y)
+        super();    
         this.w = _w; this.h = _h;
-
-        this.body = Bodies.rectangle(this.x, this.y, this.w, this.h, matteroptions);
+        this.body = Bodies.rectangle(_x, _y, this.w, this.h, matteroptions);
         World.add(world, this.body);
     }
     
