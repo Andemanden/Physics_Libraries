@@ -17,9 +17,10 @@ class Physical {
 }
 
 class Box extends Physical {
-    constructor(_x, _y, _w, _h, matteroptions = {}) {
+    constructor(_x, _y, _w, _h, matteroptions = {}, _isVisible = true) {
         console.log(`Added box: at ${_x}, ${_y}`);
         super();    
+        this.visible = _isVisible;
         this.w = _w; this.h = _h;
         this.body = Bodies.rectangle(_x, _y, this.w, this.h, matteroptions);
         World.add(world, this.body);
@@ -48,9 +49,10 @@ class Box extends Physical {
 }
 
 class Circle extends Physical{
-    constructor(_x, _y, _radius) {
+    constructor(_x, _y, _radius, matteroptions = {}) {
+        this.visible = _isVisible;
         this.r = _radius;
-        this.body = Bodies.circle(_x, _y, this.r);
+        this.body = Bodies.circle(_x, _y, this.r, matteroptions);
         World.add(world, this.body);
     }
 

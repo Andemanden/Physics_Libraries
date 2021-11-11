@@ -9,17 +9,25 @@ var startTime;
 
 var camera;
 
+var testpiston;
+
 function setup() {
     startTime = millis();
     createCanvas(800, 400);
-    camera = new Camera(width, height/2, width, height);
+    camera = new Camera(width / 2, height/2, width, height);
 
     engine = Engine.create();
     world  = engine.world;
+
+    testpiston = new Piston(200, 200);
     
     Engine.run(engine);
 }
 
 function draw() {
     background(0);
+
+
+
+    testpiston.show();
 }
