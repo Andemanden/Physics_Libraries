@@ -30,6 +30,7 @@ function setup() {
     Engine.run(engine);
 
     spawnLoop();
+
 }
 
 function draw() {
@@ -45,9 +46,4 @@ function draw() {
         box.show();
     for (ball of balls)
         ball.show();
-}
-
-function spawnLoop() {
-    balls.push(new Circle(Math.random()*width, 0, 10));
-    setTimeout(spawnLoop, 100);
 }
