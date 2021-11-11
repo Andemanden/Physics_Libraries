@@ -49,8 +49,8 @@ class Box extends Physical {
 
 class Circle extends Physical{
     constructor(_x, _y, _radius) {
-        super(_x, _y); this.r = _radius;
-        this.body = Bodies.circle(this.x, this.y, this.r);
+        this.r = _radius;
+        this.body = Bodies.circle(_x, _y, this.r);
         World.add(world, this.body);
     }
 
