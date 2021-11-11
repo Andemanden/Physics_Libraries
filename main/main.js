@@ -18,14 +18,18 @@ var sliderx, slidery, sliderprop;
 function setup() {
     startTime = millis();
     createCanvas(800, 400);
-    camera = new Camera(width/2, height/2, width, height);
+    camera = new Camera(width, height/2, width, height);
 
     engine = Engine.create();
     world  = engine.world;
+
+    sliderprop = createSlider(0, 2, 1, 0.01);
     
     floor = new Box(width/2, height/2, width, 10, {isStatic: true, angle: 0.4, friction: 0});
     
     Engine.run(engine);
+
+    spawnLoop();
 }
 
 function draw() {
@@ -33,11 +37,17 @@ function draw() {
 
     floor.show();
 
-    if (balls[0] != null)
-        camera.setpos(balls[0].body.position.x, balls[0].body.position.y);
+    
+    camera.pan(0, 2);
+    camera.setproportion(sliderprop.value());
 
     for (box of boxes)
         box.show();
     for (ball of balls)
         ball.show();
+}
+
+function spawnLoop() {
+    balls.push(new Circle(Math.random()*width, 0, 10));
+    setTimeout(spawnLoop, 100);
 }

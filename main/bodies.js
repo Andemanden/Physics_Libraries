@@ -1,61 +1,81 @@
-class Box {
-   constructor(_x, _y, _w, _h, matteroptions = {}) {
-       console.log(`Added box: at ${_x}, ${_y}`);
-       this.x = _x; this.y = _y; this.w = _w; this.h = _h;
-       this.body = Bodies.rectangle(this.x, this.y, this.w, this.h, matteroptions);
-       World.add(world, this.body);
-   }
+class Physical {
+    constructor(_x, _y) {
+        this.x = _x; this.y = _y;
+    }
 
-   show() {
-       var pos = this.body.position;
-       var angle = this.body.angle;
-       // console.log(pos, angle);
+    getcampos(cam) {
+        var camtopx = cam.x - cam.w / 2;
+        var camtopy = cam.y - cam.h / 2;
 
-       var camtopx = camera.x - camera.w/2;
-       var camtopy = camera.y - camera.h/2;
+        var posfromcamx = this.body.position.x - camtopx;
+        var posfromcamy = this.body.position.y - camtopy;
 
-       var posfromcamx = pos.x - camtopx;
-       var posfromcamy = pos.y - camtopy;
+        return {x: posfromcamx * camera.proportion,
+                y: posfromcamy * camera.proportion};
+    }
 
-       push();
-       translate(posfromcamx * camera.proportion, posfromcamy * camera.proportion);
-       rotate(angle);
-       fill(255);
-       rectMode(CENTER);
-       rect(0, 0, this.w * camera.proportion, this.h * camera.proportion); 
-       fill(0);
-       circle(0,0, 2);
-
-       pop();
-   }
+    getcamangle(cam) {
+        return this.body.angle - cam.angle;
+    }
 }
 
-class Circle {
-   constructor(_x, _y, _radius) {
-       this.x = _x; this.y = _y; this.r = _radius;
-       this.body = Bodies.circle(this.x, this.y, this.r);
-       World.add(world, this.body);
-   }
+class Box extends Physical {
+    constructor(_x, _y, _w, _h, matteroptions = {}) {
+        console.log(`Added box: at ${_x}, ${_y}`);
+        super(_x, _y)
+        this.w = _w; this.h = _h;
 
-   show() {
-       var pos = this.body.position;
-       var angle = this.body.angle;
+        this.body = Bodies.rectangle(this.x, this.y, this.w, this.h, matteroptions);
+        World.add(world, this.body);
+    }
+    
+    getcamsize(cam) {
+        return {w: this.w*cam.proportion,
+                h: this.h*cam.proportion};
+    }
 
-       var camtopx = camera.x - camera.w/2;
-       var camtopy = camera.y - camera.h/2;
+    show() {
+        push();
+        var campos = this.getcampos(camera);
+        var camsize = this.getcamsize(camera);
+        var camangle = this.getcamangle(camera);
 
-       var posfromcamx = pos.x - camtopx;
-       var posfromcamy = pos.y - camtopy;
+        translate(campos.x, campos.y);
+        rotate(camangle);
+        fill(255);
+        rectMode(CENTER);
+        rect(0, 0, camsize.w, camsize.h);
+        fill(0);
+        circle(0, 0, 2);
+        pop();
+    }
+}
 
-       push() 
-       translate(posfromcamx * camera.proportion, posfromcamy * camera.proportion);
-       rotate(angle);
-       fill(255);
-       ellipse(0, 0, this.r*2*camera.proportion, this.r*2*camera.proportion);
-       stroke(0);
-       line(-this.r, 0, this.r, 0);
-       pop();
-   }
+class Circle extends Physical{
+    constructor(_x, _y, _radius) {
+        super(_x, _y); this.r = _radius;
+        this.body = Bodies.circle(this.x, this.y, this.r);
+        World.add(world, this.body);
+    }
+
+    getcamsize(cam) {
+        return {r: this.r*cam.proportion};
+    }
+
+    show() {
+        push();
+        var campos = this.getcampos(camera);
+        var camsize = this.getcamsize(camera);
+        var camangle = this.getcamangle(camera);
+        
+        translate(campos.x, campos.y);
+        rotate(camangle);
+        fill(255);
+        ellipseMode(RADIUS);
+        ellipse(0, 0, camsize.r);
+        stroke(0);
+        pop();
+    }
 }
 
 // class Triangle {
