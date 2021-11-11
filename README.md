@@ -33,6 +33,7 @@ Simple former (classes) der kan bruges med kamera.
 Box, Circle.
 Manipulering sker gennem deres "body" parameter. f.eks. body.position.x, body.velocity.x osv.
 Bredde og højde kan ikke justeres. Ellers finder vi ud af det.
+BEMÆRK: KOORDINATSYSTEMET FUNGERER MED X, Y I MIDTEN AF OBJEKTET!
 
 ## Maskiner vi skal lave. Aktiveres med et knaptryk, lav en "activate" funktion som trigger den:  
 - Piston (Felix)
