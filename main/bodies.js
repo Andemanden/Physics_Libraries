@@ -14,6 +14,11 @@ class Physical {
     getcamangle(cam) {
         return this.body.angle - cam.angle;
     }
+
+    setcategory(cat) {
+        this.body.collisionFilter.mask = cat;
+        this.body.collisionFilter.category = cat;
+    }
 }
 
 class Box extends Physical {
@@ -49,7 +54,8 @@ class Box extends Physical {
 }
 
 class Circle extends Physical{
-    constructor(_x, _y, _radius, matteroptions = {}) {
+    constructor(_x, _y, _radius, matteroptions = {}, _isVisible) {
+        super();
         this.visible = _isVisible;
         this.r = _radius;
         this.body = Bodies.circle(_x, _y, this.r, matteroptions);
@@ -72,28 +78,24 @@ class Circle extends Physical{
         ellipseMode(RADIUS);
         ellipse(0, 0, camsize.r);
         stroke(0);
+        line(0, - camsize.r, 0, camsize.r);
+        line(-camsize.r, 0, camsize.r, 0);
         pop();
     }
 }
 
-// class Triangle {
-   // constructor(x1, y1, x2, y2, x3, y3, _isStatic) {
-       // this.body = Bodies.fromVertices(x1, y1, [{x1, y1}, {x2, y2}, {x3, y3}], {isStatic: _isStatic});
-       // World.add(world, this.body);
-   // }
-// 
-   // show() {
-       // var pos = this.body.position;
-// 
-       // console.table(this.body.vertices[0]);
-// 
-       // push();
-       // translate(pos.x, pos.y);
-       // 
-       // stroke(255);    
-       // line(0, 0, this.body.vertices[0].position.x, this.body.vertices[0].y);
-       // line(0, 0, this.body.vertices[1].position.x, this.body.vertices[1].y);
-// 
-       // pop();
-   // }
-// }
+class Structure extends Box {
+    constructor(_x, _y, _w, _h, matteroptions = {}) {
+        matteroptions.isStatic = true;
+        super(_x, _y, _w, _h, matteroptions);
+        this.setcategory(DEFAULT_COLLISION);
+    }
+}
+
+class Ball extends Circle {
+    constructor(_x, _y, _w, _h, matteroptions = {}) {
+        super(_x, _y, _w, _h, matteroptions = {});
+
+        this.setcategory(DEFAULT_COLLISION | PISTON_MECHANISM_COLLISION);
+    }
+}
