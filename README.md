@@ -11,15 +11,15 @@ Manipulering sker gennem deres "body" parameter. f.eks. body.position.x, body.ve
 Bredde og højde kan ikke justeres. Ellers finder vi ud af det.
 BEMÆRK: KOORDINATSYSTEMET FUNGERER MED X, Y I MIDTEN AF OBJEKTET!
 ## Game Controls  
-```Mouse:```         ```Idfk```   
-```Left Click:```    ```nothing idk```  
-```Right Click:```    ```idk```  
-```S:```          ```Sprunk activate```  
-```F:```          ```Fan (and pay respect)```  
-```R:```          ```Rotate rotator```  
-```D:```          ```Door open```  
-```Arrow Keys:```     ```Force camera perspective```  
-```+/-:```          ```Zoom in and out```  
+`Mouse:`         `Idfk`   
+`Left Click:`    `nothing idk`  
+`Right Click:`    `idk`  
+`S:`          `Sprunk activate`  
+`F:`          `Fan (and pay respect)`  
+`R:`          `Rotate rotator`  
+`D:`          `Door open`  
+`Arrow Keys:`     `Force camera perspective`  
+`+/-:`          `Zoom in and out`  
 
 
 ## Maskiner vi skal lave. Aktiveres med et knaptryk, lav en "activate" funktion som trigger den:  
