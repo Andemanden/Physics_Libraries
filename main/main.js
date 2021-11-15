@@ -11,7 +11,9 @@ var camera;
 
 function setup() {
     createCanvas(800, 400);
+  
     camera = new Camera(width / 2, height/2, width, height);
+    camera = new Camera(width/2, height/2, width, height);
 
     engine = Engine.create();
     world  = engine.world;
