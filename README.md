@@ -12,11 +12,11 @@ Bredde og højde kan ikke justeres. Ellers finder vi ud af det.
 BEMÆRK: KOORDINATSYSTEMET FUNGERER MED X, Y I MIDTEN AF OBJEKTET!
 
 ## Maskiner vi skal lave. Aktiveres med et knaptryk, lav en "activate" funktion som trigger den:  
-- Piston (Felix)
+- DONE Piston (Felix)
 - Rotator (motor) (Andreas)
 - Blæser (Kristian)
 - Port (Adam)
-- Fjeder med platform (enkelt aktivation, kan kun køre en gang) (Den der vil)
+- DONE Fjeder med platform (enkelt aktivation, kan kun køre en gang) (Den der vil)
    - Skriv activate() funktion, tjek om det er gjort.
 
 ## Andet shit:
