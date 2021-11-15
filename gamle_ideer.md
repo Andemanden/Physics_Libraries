@@ -7,7 +7,6 @@
 - Cloths/springs til æstetik eller evt. bremsning - målflag (ish)
 - Broer: springs 
 
-
 ### Hockey spil
 - Kamera ser oppefra
 - Lav friktions hockey puck
