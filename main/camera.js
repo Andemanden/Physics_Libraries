@@ -10,13 +10,13 @@ class Camera {
    setpos(x, y) {
       this.x = x; this.y = y;
    }
-
+ 
    setwidth(w) { // sets screen zoom based on given width
       this.w = w;
       this.proportion = width/this.w;
       this.h = height/this.proportion;
    }
-   //
+
    setheight(h) {
       this.h = h;
       this.proportion = height/this.h;
