@@ -16,8 +16,6 @@ function setup() {
     engine = Engine.create();
     world  = engine.world;
 
-    Events.on(engine, "beforeUpdate", moves);
-
     Runner.run(engine);
 }
 
