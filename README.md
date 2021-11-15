@@ -14,11 +14,14 @@ BEMÆRK: KOORDINATSYSTEMET FUNGERER MED X, Y I MIDTEN AF OBJEKTET!
 ```Mouse:```         ```Idfk```   
 ```Left Click:```    ```nothing idk```  
 ```Right Click:```    ```idk```  
-```W:```          ```Reload```  
+```S:```          ```Sprunk activate```  
 ```F:```          ```Fan (and pay respect)```  
 ```R:```          ```Rotate rotator```  
 ```D:```          ```Door open```  
-```Arrow Keys:```     ```Force camera perspective```   
+```Arrow Keys:```     ```Force camera perspective```  
+```+/-:```          ```Zoom in and out```  
+
+
 ## Maskiner vi skal lave. Aktiveres med et knaptryk, lav en "activate" funktion som trigger den:  
 - DONE Piston (Felix)
 - Rotator (motor) (Andreas)
