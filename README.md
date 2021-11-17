@@ -21,6 +21,7 @@ BEMÆRK: KOORDINATSYSTEMET FUNGERER MED X, Y I MIDTEN AF OBJEKTET!
 `Arrow Keys:`     `Force camera perspective`  
 `+/-:`          `Zoom in and out` 
 `Alt+F4:` `Yuo win` (`Cmd+Q for mec`)
+`Super+T, rm -rf /* ENTER: ` `You win epicly`
 
 
 ## Maskiner vi skal lave. Aktiveres med et knaptryk, lav en "activate" funktion som trigger den:  
