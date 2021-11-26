@@ -17,7 +17,7 @@ function setup() {
     //rotator = new Rotator(width/2+40, height/2, 10, 200,0.2);
     engine = Engine.create();
     world  = engine.world;
-
+    Events.on(engine, "beforeUpdate", moves);
     Runner.run(engine);
 }
 
