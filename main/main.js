@@ -23,4 +23,7 @@ function setup() {
 
 function draw() {
     background(0);
+    //testball.show(); 
+    //testpiston.show();
+    //rotator.show();
 }
