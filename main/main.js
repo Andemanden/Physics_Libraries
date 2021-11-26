@@ -6,9 +6,8 @@ var Engine = Matter.Engine,
     Events = Matter.Events;
 
 var engine, world, bodies;
-
 var camera;
-
+var testpiston, testball, rotator;
 function setup() {
     createCanvas(800, 400);
   
