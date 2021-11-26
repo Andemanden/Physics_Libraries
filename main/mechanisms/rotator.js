@@ -4,7 +4,6 @@ class Rotator {
     constructor(_x,_y,_w,_h,_rv) {
       this.x = _x;this.y = _y; this.w = _w; this.h = _h;this.rot=_rv;
       this.arm = new Rectangle(_x, _y, _w * 0.9, _h * 0.9,{isStatic: true});
-      this.stopplate.setcategory(ROTATOR_STOPPLATE_COLLISION);
       Matter.Body.setAngle(this.arm.body, -1);
       this.arm.setcategory(DEFAULT_COLLISION);
       //The intend was mouseconstraint. But it could not find the html element
