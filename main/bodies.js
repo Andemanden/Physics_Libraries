@@ -99,3 +99,32 @@ class Ball extends Circle {
         this.setcategory(DEFAULT_COLLISION | PISTON_MECHANISM_COLLISION);
     }
 }
+
+class Rectangle extends Physical {
+    constructor(_x, _y, _w, _h, matteroptions = {}, _isVisible = true) {
+      super();    
+      this.visible = _isVisible;
+      this.w = _w; this.h = _h;
+      this.body = Bodies.rectangle(_x, _y, this.w, this.h, matteroptions);
+      World.add(world, this.body);
+  }
+  getcamsize(cam) {
+      return {w: this.w*cam.proportion,
+              h: this.h*cam.proportion};
+  }
+  show() {
+      push();
+      var campos = this.getcampos(camera);
+      var camsize = this.getcamsize(camera);
+      var camangle = this.getcamangle(camera);
+      translate(campos.x, campos.y);
+      rotate(camangle);
+      fill(255);
+      rectMode(CENTER);
+      rect(0, 0, camsize.w, camsize.h);
+      fill(0);
+      circle(0,0,2);
+      pop();
+  }
+
+}
