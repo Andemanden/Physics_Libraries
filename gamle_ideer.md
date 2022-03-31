@@ -13,6 +13,8 @@
 - Powerups/forskellige gamemodes
 - Evt. online? (ambitiøst!), men kunne fungere (Websockets til central server på lokalt netværk)
 
+- find hjemmeadresse og cpr numer på doge con
+
 ### 3D: rullende bold gennem labyrint
 *Eksempelvis:*
 
